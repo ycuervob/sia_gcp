@@ -13,6 +13,7 @@ spec:
     - protocol: TCP
       port: 8080
       targetPort: 80
+  type: LoadBalancer
   selector:
     io.kompose.service: sia-general-ag
 status:
