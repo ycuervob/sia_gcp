@@ -27,7 +27,7 @@ spec:
         - image: ycuervob/sia_wa:latest
           name: sia-wa
           ports:
-            - containerPort: 80
+            - containerPort: 3800
           resources: {}
       restartPolicy: Always
 status: {}

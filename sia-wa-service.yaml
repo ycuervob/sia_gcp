@@ -12,7 +12,7 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 80
+      targetPort: 3800
   type: LoadBalancer
   selector:
     io.kompose.service: sia-wa
