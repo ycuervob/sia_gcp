@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -f docker-compose.yml convert
+    kompose.version: 1.26.1 (a9d05d509)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: phpldapadmin
+  name: phpldapadmin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: phpldapadmin
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose -f docker-compose.yml convert
+        kompose.version: 1.26.1 (a9d05d509)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: phpldapadmin
+    spec:
+      containers:
+        - env:
+            - name: PHPLDAPADMIN_HTTPS
+              value: "false"
+            - name: PHPLDAPADMIN_LDAP_HOSTS
+              value: sia-ldap
+          image: osixia/phpldapadmin:latest
+          name: ldap-sia-client
+          ports:
+            - containerPort: 80
+          resources: {}
+      restartPolicy: Always
+status: {}

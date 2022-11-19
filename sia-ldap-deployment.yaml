@@ -1,0 +1,95 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -f docker-compose.yml convert
+    kompose.version: 1.26.1 (a9d05d509)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: sia-ldap
+  name: sia-ldap
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: sia-ldap
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose -f docker-compose.yml convert
+        kompose.version: 1.26.1 (a9d05d509)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: sia-ldap
+    spec:
+      containers:
+        - env:
+            - name: COMPOSE_HTTP_TIMEOUT
+              value: "200"
+            - name: LDAP_ADMIN_PASSWORD
+              value: sia_2E_secret_admin
+            - name: LDAP_BACKEND
+              value: hdb
+            - name: LDAP_BASE_DN
+            - name: LDAP_CONFIG_PASSWORD
+              value: sia_2E_secret_config
+            - name: LDAP_DOMAIN
+              value: "sia.unal.edu.co"
+            - name: LDAP_LOG_LEVEL
+              value: "256"
+            - name: LDAP_ORGANISATION
+              value: Sistema de infomacion academica
+            - name: LDAP_READONLY_USER
+              value: "false"
+            - name: LDAP_REMOVE_CONFIG_AFTER_SETUP
+              value: "true"
+            - name: LDAP_REPLICATION
+              value: "false"
+            - name: LDAP_SSL_HELPER_PREFIX
+              value: ldap
+            - name: LDAP_TLS
+              value: "true"
+            - name: LDAP_TLS_CA_CRT_FILENAME
+              value: ca.crt
+            - name: LDAP_TLS_CIPHER_SUITE
+              value: SECURE256:-VERS-SSL3.0
+            - name: LDAP_TLS_CRT_FILENAME
+              value: ldap.crt
+            - name: LDAP_TLS_ENFORCE
+              value: "false"
+            - name: LDAP_TLS_KEY_FILENAME
+              value: ldap.key
+            - name: LDAP_TLS_PROTOCOL_MIN
+              value: "3.1"
+            - name: LDAP_TLS_VERIFY_CLIENT
+              value: demand
+          image: osixia/openldap:1.1.8
+          name: sia-ldap
+          ports:
+            - containerPort: 389
+            - containerPort: 636
+          resources: {}
+          stdin: true
+          tty: true
+          volumeMounts:
+            - mountPath: /var/lib/ldap
+              name: sia-ldap-claim0
+            - mountPath: /etc/ldap/slapd.d
+              name: sia-ldap-claim1
+            - mountPath: /container/service/slapd/assets/certs/
+              name: sia-ldap-claim2
+      hostname: sia-ldap
+      restartPolicy: Always
+      volumes:
+        - name: sia-ldap-claim0
+          persistentVolumeClaim:
+            claimName: sia-ldap-claim0
+        - name: sia-ldap-claim1
+          persistentVolumeClaim:
+            claimName: sia-ldap-claim1
+        - name: sia-ldap-claim2
+          persistentVolumeClaim:
+            claimName: sia-ldap-claim2
+status: {}
