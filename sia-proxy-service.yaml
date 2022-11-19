@@ -6,8 +6,8 @@ metadata:
     kompose.version: 1.26.1 (a9d05d509)
   creationTimestamp: null
   labels:
-    io.kompose.service: sia-general-ag
-  name: sia-general-ag
+    io.kompose.service: sia-proxy
+  name: sia-proxy
 spec:
   ports:
     - protocol: TCP
@@ -15,6 +15,6 @@ spec:
       targetPort: 80
   type: LoadBalancer
   selector:
-    io.kompose.service: sia-general-ag
+    io.kompose.service: sia-proxy
 status:
   loadBalancer: {}
