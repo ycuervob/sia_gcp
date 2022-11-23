@@ -9,7 +9,7 @@ metadata:
     io.kompose.service: sia-proxy
   name: sia-proxy
 spec:
-  replicas: 4
+  replicas: 3
   selector:
     matchLabels:
       io.kompose.service: sia-proxy
