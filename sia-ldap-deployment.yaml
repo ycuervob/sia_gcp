@@ -9,7 +9,7 @@ metadata:
     io.kompose.service: sia-ldap
   name: sia-ldap
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       io.kompose.service: sia-ldap

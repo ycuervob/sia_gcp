@@ -9,7 +9,7 @@ metadata:
     io.kompose.service: sia-session-ms
   name: sia-session-ms
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       io.kompose.service: sia-session-ms
