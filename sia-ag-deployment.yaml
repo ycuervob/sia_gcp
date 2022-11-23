@@ -9,7 +9,7 @@ metadata:
     io.kompose.service: sia-general-ag
   name: sia-general-ag
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
       io.kompose.service: sia-general-ag
