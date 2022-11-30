@@ -27,7 +27,7 @@ spec:
         - image: ycuervob/sia_general_ag:gpc
           name: sia-general-ag
           ports:
-            - containerPort: 4000
+            - containerPort: 4010
           resources: {}
       restartPolicy: Always
 status: {}
