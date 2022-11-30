@@ -24,7 +24,7 @@ spec:
         io.kompose.service: sia-wa
     spec:
       containers:
-        - image: ycuervob/sia_wa:deploy2
+        - image: ycuervob/sia_wa:deploy3
           name: sia-wa
           ports:
             - containerPort: 3800
