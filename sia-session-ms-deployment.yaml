@@ -24,7 +24,7 @@ spec:
         io.kompose.service: sia-session-ms
     spec:
       containers:
-        - image: ycuervob/sia_session:gcp1
+        - image: ycuervob/sia_session:gcp
           name: sia-session-ms
           ports:
             - containerPort: 3000
