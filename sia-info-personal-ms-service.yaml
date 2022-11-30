@@ -11,8 +11,8 @@ metadata:
 spec:
   ports:
     - protocol: TCP
-      port: 3000
-      targetPort: 3000
+      port: 8000
+      targetPort: 8000
   selector:
     io.kompose.service: sia-info-personal-ms
 status:
