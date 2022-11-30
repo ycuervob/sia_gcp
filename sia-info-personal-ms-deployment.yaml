@@ -24,7 +24,7 @@ spec:
         io.kompose.service: sia-info-personal-ms
     spec:
       containers:
-        - image: jumorap/sia_info_personal2_ms:latest
+        - image: jumorap/sia_info_personal2_ms:gpc
           name: sia-info-personal-ms
           ports:
             - containerPort: 3000
