@@ -30,4 +30,5 @@ spec:
             - containerPort: 3800
           resources: {}
       restartPolicy: Always
+      imagePullPolicy: Always
 status: {}
