@@ -24,7 +24,7 @@ spec:
         io.kompose.service: sia-calificaciones-ms
     spec:
       containers:
-        - image: jsla114/sia_calificaciones_ms:latest
+        - image: jsla114/sia_calificaciones_ms:ms
           name: sia-calificaciones-ms
           ports:
             - containerPort: 8000
