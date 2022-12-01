@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -f docker-compose.yml convert
+    kompose.version: 1.26.1 (a9d05d509)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: sia-calificaciones-ms
+  name: sia-calificaciones-ms
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      io.kompose.service: sia-calificaciones-ms
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose -f docker-compose.yml convert
+        kompose.version: 1.26.1 (a9d05d509)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: sia-calificaciones-ms
+    spec:
+      containers:
+        - image: jsla114/sia_calificaciones_ms:latest
+          name: sia-calificaciones-ms
+          ports:
+            - containerPort: 8000
+          resources: {}
+      restartPolicy: Always
+status: {}
