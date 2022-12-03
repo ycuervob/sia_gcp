@@ -11,7 +11,7 @@ metadata:
 spec:
   ports:
     - protocol: TCP
-      port: 443
+      port: 3800
       targetPort: 3800
   type: LoadBalancer
   selector:
