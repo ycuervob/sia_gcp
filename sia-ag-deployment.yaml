@@ -24,7 +24,7 @@ spec:
         io.kompose.service: sia-general-ag
     spec:
       containers:
-        - image: ycuervob/sia_general_ag:gpc
+        - image: ycuervob/sia_general_ag:latest
           name: sia-general-ag
           ports:
             - containerPort: 4010
