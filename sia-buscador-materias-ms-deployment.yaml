@@ -24,7 +24,7 @@ spec:
         io.kompose.service: sia-buscador-materias-ms
     spec:
       containers:
-        - image: jleonro/architecture2022:latest
+        - image: jumorap/sia_buscador_cursos_ms:latest
           name: sia-buscador-materias-ms
           ports:
             - containerPort: 4000
