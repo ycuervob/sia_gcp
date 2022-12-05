@@ -6,14 +6,14 @@ metadata:
     kompose.version: 1.26.1 (a9d05d509)
   creationTimestamp: null
   labels:
-    io.kompose.service: sia-proxy-ga-mcs
-  name: sia-proxy-ga-mcs
+    io.kompose.service: sia-proxy-ag-mcs
+  name: sia-proxy-ag-mcs
 spec:
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
   selector:
-    io.kompose.service: sia-proxy-ga-mcs
+    io.kompose.service: sia-proxy-ag-mcs
 status:
   loadBalancer: {}
