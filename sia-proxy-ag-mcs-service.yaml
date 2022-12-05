@@ -13,6 +13,7 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
+  type: LoadBalancer
   selector:
     io.kompose.service: sia-proxy-ag-mcs
 status:
