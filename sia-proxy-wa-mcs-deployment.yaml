@@ -6,13 +6,13 @@ metadata:
     kompose.version: 1.26.1 (a9d05d509)
   creationTimestamp: null
   labels:
-    io.kompose.service: sia-session-ms
-  name: sia-session-ms
+    io.kompose.service: sia-proxy-wa-mcs
+  name: sia-proxy-wa-mcs
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      io.kompose.service: sia-session-ms
+      io.kompose.service: sia-proxy-wa-mcs
   strategy: {}
   template:
     metadata:
@@ -21,13 +21,13 @@ spec:
         kompose.version: 1.26.1 (a9d05d509)
       creationTimestamp: null
       labels:
-        io.kompose.service: sia-session-ms
+        io.kompose.service: sia-proxy-wa-mcs
     spec:
       containers:
-        - image: ycuervob/sia_session:complete
-          name: sia-session-ms
+        - image: ycuervob/sia-proxy-wa-mcs:latest
+          name: sia-proxy-wa-mcs
           ports:
-            - containerPort: 3000
+            - containerPort: 80
           resources: {}
       restartPolicy: Always
 status: {}
