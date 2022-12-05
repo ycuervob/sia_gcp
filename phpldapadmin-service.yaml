@@ -13,7 +13,6 @@ spec:
     - name: "8085"
       port: 8085
       targetPort: 80
-  type: LoadBalancer
   selector:
     io.kompose.service: phpldapadmin
 status:
