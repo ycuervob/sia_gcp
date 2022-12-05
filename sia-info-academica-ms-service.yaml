@@ -13,7 +13,6 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 3006
-  type: LoadBalancer
   selector:
     io.kompose.service: sia-info-academica-ms
 status:

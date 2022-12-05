@@ -13,7 +13,6 @@ spec:
     - protocol: TCP
       port: 8000
       targetPort: 8000
-  type: LoadBalancer
   selector:
     io.kompose.service: sia-info-personal-ms
 status:

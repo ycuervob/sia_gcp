@@ -13,7 +13,6 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 4000
-  type: LoadBalancer
   selector:
     io.kompose.service: sia-buscador-materias-ms
 status:
