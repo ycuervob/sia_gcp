@@ -27,7 +27,7 @@ spec:
         - image: ycuervob/sia_academica_ag:latest
           name: sia-academica-ag
           ports:
-            - containerPort: 4001
+            - containerPort: 80
           resources: {}
       restartPolicy: Always
 status: {}
