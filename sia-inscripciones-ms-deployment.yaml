@@ -27,7 +27,7 @@ spec:
         - image: jorodriguezal/sia_inscripciones_ms:latest
           name: sia-inscripciones-ms
           ports:
-            - containerPort: 8000
+            - containerPort: 4000
           resources: {}
       restartPolicy: Always
 status: {}
