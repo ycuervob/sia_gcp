@@ -13,7 +13,6 @@ spec:
     - protocol: TCP
       port: 3800
       targetPort: 3800
-  type: LoadBalancer
   selector:
     io.kompose.service: sia-wa
 status:
